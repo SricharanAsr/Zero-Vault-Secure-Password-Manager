@@ -11,7 +11,7 @@ const apiToken = process.env.QATOUCH_API_TOKEN || '';
 const projectKey = process.env.QATOUCH_PROJECT_KEY || 'mPx9';
 const testRunId = process.env.QATOUCH_TEST_RUN_ID || '';
 
-const apiUrl = `https://api.qatouch.com/api/v1/testRunResults/status`;
+const apiUrl = `https://api.qatouch.com/api/v1/publish-results`;
 
 console.log('🔄 Starting QA Touch Integration Sync...');
 console.log(`📊 Project: ${projectKey} | Run: ${testRunId} | Domain: ${domain}`);
@@ -22,8 +22,7 @@ if (!apiToken || !domain || !testRunId) {
 }
 
 // Map local status strings to QA Touch status IDs 
-// Status Maps depend on QA touch settings, usually:
-// 1: Passed, 2: Untested, 3: Blocked, 4: Retest, 5: Failed
+// 1: Passed, 5: Failed, 2: Untested/Skipped
 const statusMap = {
   'passed': 1,
   'failed': 5,
@@ -36,9 +35,6 @@ const statusMap = {
 function pushToQATouch(testResults) {
   if (!apiToken || testResults.length === 0 || !testRunId) {
     console.log(`ℹ️  Skipping API upload. Compiled ${testResults.length} test cases.`);
-    if (testResults.length > 0) {
-      console.log('Sample result:', JSON.stringify(testResults[0], null, 2));
-    }
     return;
   }
 
@@ -55,7 +51,7 @@ function pushToQATouch(testResults) {
 
   const options = {
     hostname: 'api.qatouch.com',
-    path: '/api/v1/testRunResults/status',
+    path: '/api/v1/publish-results',
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
