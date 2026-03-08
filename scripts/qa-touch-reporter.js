@@ -36,6 +36,9 @@ const statusMap = {
 function pushToQATouch(testResults) {
   if (!apiToken || testResults.length === 0 || !testRunId) {
     console.log(`ℹ️  Skipping API upload. Compiled ${testResults.length} test cases.`);
+    if (testResults.length > 0) {
+      console.log('Sample result:', JSON.stringify(testResults[0], null, 2));
+    }
     return;
   }
 
@@ -48,13 +51,15 @@ function pushToQATouch(testResults) {
     results: testResults
   });
 
+  console.log('📦 API Payload:', payload);
+
   const options = {
     hostname: 'api.qatouch.com',
     path: '/api/v1/testRunResults/status',
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Content-Length': payload.length,
+      'Content-Length': Buffer.byteLength(payload),
       'api-token': apiToken,
       'domain': domain
     }
@@ -64,7 +69,13 @@ function pushToQATouch(testResults) {
     let data = '';
     res.on('data', (chunk) => data += chunk);
     res.on('end', () => {
-      console.log(`✅ QA Touch Response [${res.statusCode}]: ${data}`);
+      console.log(`✅ QA Touch Response [${res.statusCode}]`);
+      try {
+        const parsed = JSON.parse(data);
+        console.log('📝 Response Body:', JSON.stringify(parsed, null, 2));
+      } catch (e) {
+        console.log('📝 Response Body (Raw):', data);
+      }
     });
   });
 
