@@ -1,13 +1,12 @@
-import * as request from 'supertest';
-import * as express from 'express';
-// Using a mock app since we are testing API logic conceptually for the Epic
+import request from 'supertest';
+import express from 'express';
+
+// Mock Express app for testing API encryption logic (Epic 1 & 3)
 const app = express();
 app.use(express.json());
 app.post('/api/vault/sync', (req, res) => res.status(200).send());
 app.get('/api/vault', (req, res) => res.status(200).json({ vaultData: "U2FsdGVkX1+vUPmB/9L5p4..." }));
 
-export const connectDB = async () => { };
-export const disconnectDB = async () => { };
 describe('Epic 1 & 3: Security & Backend API Testing', () => {
     beforeAll(async () => {
         // Setup in-memory DB or similar
@@ -34,7 +33,6 @@ describe('Epic 1 & 3: Security & Backend API Testing', () => {
             .send(payload);
 
         // We expect a successful sync response
-        // Expect real status codes depending on the app's routing
         expect([200, 201]).toContain(res.status);
 
         // Verify the data retrieved is strictly the exact ciphertext sent, 
