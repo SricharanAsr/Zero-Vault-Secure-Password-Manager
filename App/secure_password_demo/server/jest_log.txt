@@ -1,0 +1,195 @@
+
+> server@1.0.0 test
+> jest
+
+  console.log
+    [REQUEST] GET /api/vault
+
+      at src/app.ts:19:13
+
+  console.error
+    Get Vault Error: TypeError: Cannot read properties of undefined (reading 'eq')
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\src\routes\vault.ts:20:13
+        at Layer.handleRequest (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\layer.js:152:17)
+        at next (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\route.js:157:13)
+        at authMiddleware (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\src\middleware\auth.ts:20:9)
+        at Layer.handleRequest (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\layer.js:152:17)
+        at next (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\route.js:157:13)
+        at Route.dispatch (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\route.js:117:3)
+        at handle (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:435:11)
+        at Layer.handleRequest (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\layer.js:152:17)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:295:15
+        at processParams (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:582:12)
+        at next (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:291:5)
+        at Function.handle (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:186:3)
+        at router (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:60:12)
+        at Layer.handleRequest (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\layer.js:152:17)
+        at trimPrefix (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:342:13)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:297:9
+        at processParams (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:582:12)
+        at next (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:291:5)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\src\app.ts:20:5
+        at Layer.handleRequest (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\layer.js:152:17)
+        at trimPrefix (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:342:13)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:297:9
+        at processParams (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:582:12)
+        at next (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:291:5)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\express-rate-limit\dist\index.cjs:942:7
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\express-rate-limit\dist\index.cjs:825:5
+
+    [0m [90m 61 |[39m         })[33m;[39m
+     [90m 62 |[39m     } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 63 |[39m         console[33m.[39merror([32m'Get Vault Error:'[39m[33m,[39m error)[33m;[39m
+     [90m    |[39m                 [31m[1m^[22m[39m
+     [90m 64 |[39m         res[33m.[39mstatus([35m500[39m)[33m.[39mjson({ error[33m:[39m [32m'Server error'[39m })[33m;[39m
+     [90m 65 |[39m     }
+     [90m 66 |[39m })[33m;[39m[0m
+
+      at src/routes/vault.ts:63:17
+      at Layer.handleRequest (node_modules/router/lib/layer.js:152:17)
+      at next (node_modules/router/lib/route.js:157:13)
+      at authMiddleware (src/middleware/auth.ts:20:9)
+      at Layer.handleRequest (node_modules/router/lib/layer.js:152:17)
+      at next (node_modules/router/lib/route.js:157:13)
+      at Route.dispatch (node_modules/router/lib/route.js:117:3)
+      at handle (node_modules/router/index.js:435:11)
+      at Layer.handleRequest (node_modules/router/lib/layer.js:152:17)
+      at node_modules/router/index.js:295:15
+      at processParams (node_modules/router/index.js:582:12)
+      at next (node_modules/router/index.js:291:5)
+      at Function.handle (node_modules/router/index.js:186:3)
+      at router (node_modules/router/index.js:60:12)
+      at Layer.handleRequest (node_modules/router/lib/layer.js:152:17)
+      at trimPrefix (node_modules/router/index.js:342:13)
+      at node_modules/router/index.js:297:9
+      at processParams (node_modules/router/index.js:582:12)
+      at next (node_modules/router/index.js:291:5)
+      at src/app.ts:20:5
+      at Layer.handleRequest (node_modules/router/lib/layer.js:152:17)
+      at trimPrefix (node_modules/router/index.js:342:13)
+      at node_modules/router/index.js:297:9
+      at processParams (node_modules/router/index.js:582:12)
+      at next (node_modules/router/index.js:291:5)
+      at node_modules/express-rate-limit/dist/index.cjs:942:7
+      at node_modules/express-rate-limit/dist/index.cjs:825:5
+
+  console.log
+    [REQUEST] POST /api/vault/sync
+
+      at src/app.ts:19:13
+
+  console.error
+    Sync Error: TypeError: Cannot read properties of undefined (reading 'eq')
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\src\routes\vault.ts:79:13
+        at Layer.handleRequest (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\layer.js:152:17)
+        at next (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\route.js:157:13)
+        at authMiddleware (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\src\middleware\auth.ts:20:9)
+        at Layer.handleRequest (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\layer.js:152:17)
+        at next (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\route.js:157:13)
+        at Route.dispatch (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\route.js:117:3)
+        at handle (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:435:11)
+        at Layer.handleRequest (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\layer.js:152:17)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:295:15
+        at processParams (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:582:12)
+        at next (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:291:5)
+        at Function.handle (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:186:3)
+        at router (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:60:12)
+        at Layer.handleRequest (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\layer.js:152:17)
+        at trimPrefix (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:342:13)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:297:9
+        at processParams (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:582:12)
+        at next (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:291:5)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\src\app.ts:20:5
+        at Layer.handleRequest (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\lib\layer.js:152:17)
+        at trimPrefix (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:342:13)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:297:9
+        at processParams (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:582:12)
+        at next (C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\router\index.js:291:5)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\express-rate-limit\dist\index.cjs:942:7
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at C:\Users\kusha\OneDrive\Desktop\Integrated Product\App\secure_password_demo\server\node_modules\express-rate-limit\dist\index.cjs:825:5
+
+    [0m [90m 215 |[39m
+     [90m 216 |[39m     } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 217 |[39m         console[33m.[39merror([32m'Sync Error:'[39m[33m,[39m error)[33m;[39m
+     [90m     |[39m                 [31m[1m^[22m[39m
+     [90m 218 |[39m         res[33m.[39mstatus([35m500[39m)[33m.[39mjson({ error[33m:[39m [32m'Sync failed'[39m })[33m;[39m
+     [90m 219 |[39m     }
+     [90m 220 |[39m })[33m;[39m[0m
+
+      at src/routes/vault.ts:217:17
+      at Layer.handleRequest (node_modules/router/lib/layer.js:152:17)
+      at next (node_modules/router/lib/route.js:157:13)
+      at authMiddleware (src/middleware/auth.ts:20:9)
+      at Layer.handleRequest (node_modules/router/lib/layer.js:152:17)
+      at next (node_modules/router/lib/route.js:157:13)
+      at Route.dispatch (node_modules/router/lib/route.js:117:3)
+      at handle (node_modules/router/index.js:435:11)
+      at Layer.handleRequest (node_modules/router/lib/layer.js:152:17)
+      at node_modules/router/index.js:295:15
+      at processParams (node_modules/router/index.js:582:12)
+      at next (node_modules/router/index.js:291:5)
+      at Function.handle (node_modules/router/index.js:186:3)
+      at router (node_modules/router/index.js:60:12)
+      at Layer.handleRequest (node_modules/router/lib/layer.js:152:17)
+      at trimPrefix (node_modules/router/index.js:342:13)
+      at node_modules/router/index.js:297:9
+      at processParams (node_modules/router/index.js:582:12)
+      at next (node_modules/router/index.js:291:5)
+      at src/app.ts:20:5
+      at Layer.handleRequest (node_modules/router/lib/layer.js:152:17)
+      at trimPrefix (node_modules/router/index.js:342:13)
+      at node_modules/router/index.js:297:9
+      at processParams (node_modules/router/index.js:582:12)
+      at next (node_modules/router/index.js:291:5)
+      at node_modules/express-rate-limit/dist/index.cjs:942:7
+      at node_modules/express-rate-limit/dist/index.cjs:825:5
+
+FAIL src/routes/vault.test.ts
+  Vault API
+    GET /api/vault
+      × should create new sync state if none exists (71 ms)
+    POST /api/vault/sync
+      × should return 409 Conflict when baseVersion != serverVersion (24 ms)
+
+  ● Vault API › GET /api/vault › should create new sync state if none exists
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 500
+
+    [0m [90m 50 |[39m                 [33m.[39m[36mset[39m([32m'Authorization'[39m[33m,[39m [32m`Bearer ${token}`[39m)[33m;[39m
+     [90m 51 |[39m
+    [31m[1m>[22m[39m[90m 52 |[39m             expect(res[33m.[39mstatus)[33m.[39mtoBe([35m200[39m)[33m;[39m
+     [90m    |[39m                                [31m[1m^[22m[39m
+     [90m 53 |[39m             expect(res[33m.[39mbody[33m.[39mvaultVersion)[33m.[39mtoBe([35m0[39m)[33m;[39m
+     [90m 54 |[39m         })[33m;[39m
+     [90m 55 |[39m     })[33m;[39m[0m
+
+      at Object.<anonymous> (src/routes/vault.test.ts:52:32)
+
+  ● Vault API › POST /api/vault/sync › should return 409 Conflict when baseVersion != serverVersion
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 409
+    Received: 500
+
+    [0m [90m 78 |[39m                 [33m.[39msend(delta)[33m;[39m
+     [90m 79 |[39m
+    [31m[1m>[22m[39m[90m 80 |[39m             expect(response[33m.[39mstatus)[33m.[39mtoBe([35m409[39m)[33m;[39m
+     [90m    |[39m                                     [31m[1m^[22m[39m
+     [90m 81 |[39m             expect(response[33m.[39mbody[33m.[39merror)[33m.[39mtoBe([32m'Sync Conflict'[39m)[33m;[39m
+     [90m 82 |[39m             expect(response[33m.[39mbody[33m.[39mserver_base_version)[33m.[39mtoBe([35m10[39m)[33m;[39m
+     [90m 83 |[39m         })[33m;[39m[0m
+
+      at Object.<anonymous> (src/routes/vault.test.ts:80:37)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 2 total
+Snapshots:   0 total
+Time:        2.008 s, estimated 3 s
+Ran all test suites.
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?

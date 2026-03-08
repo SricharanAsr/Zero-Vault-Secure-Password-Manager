@@ -1,0 +1,13 @@
+
+> zero-vault@0.0.0 build
+> tsc -b && vite build
+
+src/app/pages/Dashboard.tsx(89,70): error TS6133: 'isSyncing' is declared but its value is never read.
+src/app/pages/Dashboard.tsx(89,81): error TS6133: 'syncStatus' is declared but its value is never read.
+src/app/pages/Dashboard.tsx(536,84): error TS2322: Type '(entryData: VaultEntry) => Promise<void>' is not assignable to type '(entry: VaultEntry) => void'.
+  Types of parameters 'entryData' and 'entry' are incompatible.
+    Type 'VaultEntry' is missing the following properties from type 'VaultEntry': version, updatedAt
+src/extension/popup/App.tsx(1,1): error TS6133: 'useState' is declared but its value is never read.
+src/app/pages/Dashboard.tsx(536,84): error TS2322: Type '(entryData: VaultEntry) => Promise<void>' is not assignable to type '(entry: VaultEntry) => void'.
+  Types of parameters 'entryData' and 'entry' are incompatible.
+    Type 'VaultEntry' is missing the following properties from type 'VaultEntry': version, updatedAt

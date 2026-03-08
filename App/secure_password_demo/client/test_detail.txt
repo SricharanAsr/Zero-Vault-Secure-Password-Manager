@@ -1,0 +1,272 @@
+
+ RUN  v4.0.18 C:/Users/kusha/OneDrive/Desktop/Integrated Product/App/secure_password_demo/client
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should add an entry successfully
+Device registered/updated: Linux PC (Unknown Browser)
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should add an entry successfully
+Init: server has 0 entries (v0), local has 0 entries (v0)
+Both server and local are empty. Fresh vault.
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should add an entry successfully
+Auto-triggering syncVault...
+Checking for changes... Vault v1 vs Server v0 on device 0df44e71-4b86-4e52-84f7-7a0a0bcf4df0
+Entries: [33m1[39m
+Calculated Delta: {
+  added: [33m0[39m,
+  updated: [33m1[39m,
+  deleted: [33m0[39m,
+  baseVersion: [33m0[39m,
+  eventId: [32m'52d95ae0-2003-4e4d-8dd2-b5063629dcec'[39m
+}
+Queueing event to outbox: {
+  eventId: [32m'52d95ae0-2003-4e4d-8dd2-b5063629dcec'[39m,
+  timestamp: [33m1772962596195[39m,
+  delta: {
+    eventId: [32m'52d95ae0-2003-4e4d-8dd2-b5063629dcec'[39m,
+    device_id: [32m'0df44e71-4b86-4e52-84f7-7a0a0bcf4df0'[39m,
+    added: [],
+    updated: [ [36m[Object][39m ],
+    deleted: [],
+    baseVersion: [33m0[39m
+  }
+}
+Processing outbox event: 52d95ae0-2003-4e4d-8dd2-b5063629dcec
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should add an entry successfully
+Sync Response: 200 undefined for event 52d95ae0-2003-4e4d-8dd2-b5063629dcec
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should add an entry successfully
+Sync Success: {
+  success: [33mtrue[39m,
+  vaultVersion: [33m1[39m,
+  lastSyncedAt: [32m'2026-03-08T09:36:36.199Z'[39m
+}
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should add an entry successfully
+Cross-tab message received: VAULT_UPDATED
+Fetching authoritative state from server for cross-tab update...
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should add an entry successfully
+Cross-tab sync: Server has 0 entries (v0)
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should mark entry as deleted (tombstone)
+Device registered/updated: Linux PC (Unknown Browser)
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should mark entry as deleted (tombstone)
+Init: server has 0 entries (v0), local has 0 entries (v0)
+Both server and local are empty. Fresh vault.
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should mark entry as deleted (tombstone)
+Auto-triggering syncVault...
+Checking for changes... Vault v1 vs Server v0 on device 4f7e9e01-893e-4557-80d7-92bac115d1ee
+Entries: [33m1[39m
+Calculated Delta: {
+  added: [33m0[39m,
+  updated: [33m1[39m,
+  deleted: [33m0[39m,
+  baseVersion: [33m0[39m,
+  eventId: [32m'6a7aa25e-c7ae-48ff-9c13-379d8184fb12'[39m
+}
+Queueing event to outbox: {
+  eventId: [32m'6a7aa25e-c7ae-48ff-9c13-379d8184fb12'[39m,
+  timestamp: [33m1772962601178[39m,
+  delta: {
+    eventId: [32m'6a7aa25e-c7ae-48ff-9c13-379d8184fb12'[39m,
+    device_id: [32m'4f7e9e01-893e-4557-80d7-92bac115d1ee'[39m,
+    added: [],
+    updated: [ [36m[Object][39m ],
+    deleted: [],
+    baseVersion: [33m0[39m
+  }
+}
+Processing outbox event: 6a7aa25e-c7ae-48ff-9c13-379d8184fb12
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should mark entry as deleted (tombstone)
+Sync Response: 200 undefined for event 6a7aa25e-c7ae-48ff-9c13-379d8184fb12
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should mark entry as deleted (tombstone)
+Sync Success: {
+  success: [33mtrue[39m,
+  vaultVersion: [33m1[39m,
+  lastSyncedAt: [32m'2026-03-08T09:36:41.179Z'[39m
+}
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should mark entry as deleted (tombstone)
+Cross-tab message received: VAULT_UPDATED
+Fetching authoritative state from server for cross-tab update...
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should mark entry as deleted (tombstone)
+Cross-tab sync: Server has 0 entries (v0)
+
+ × src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should add an entry successfully 5015ms
+   → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should queue changes to outbox when offline
+Auto-triggering syncVault...
+Checking for changes... Vault v1 vs Server v0 on device 23be1bac-6770-42c0-b2fd-148311562ea4
+Entries: [33m1[39m
+Calculated Delta: {
+  added: [33m0[39m,
+  updated: [33m1[39m,
+  deleted: [33m0[39m,
+  baseVersion: [33m0[39m,
+  eventId: [32m'fe352857-f69d-4bea-987d-8260148f1ff0'[39m
+}
+Queueing event to outbox: {
+  eventId: [32m'fe352857-f69d-4bea-987d-8260148f1ff0'[39m,
+  timestamp: [33m1772962606184[39m,
+  delta: {
+    eventId: [32m'fe352857-f69d-4bea-987d-8260148f1ff0'[39m,
+    device_id: [32m'23be1bac-6770-42c0-b2fd-148311562ea4'[39m,
+    added: [],
+    updated: [ [36m[Object][39m ],
+    deleted: [],
+    baseVersion: [33m0[39m
+  }
+}
+Device registered/updated: Linux PC (Unknown Browser)
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should queue changes to outbox when offline
+Init: server has 0 entries (v0), local has 0 entries (v0)
+Both server and local are empty. Fresh vault.
+
+ × src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should mark entry as deleted (tombstone) 5007ms
+   → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ × src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should queue changes to outbox when offline 1014ms
+   → [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  1[39m
+Received:
+[31m  0[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"sync-status"[39m
+        [36m>[39m
+          [0mpending[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"vault-version"[39m
+        [36m>[39m
+          [0m0[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"online-status"[39m
+        [36m>[39m
+          [0mOffline[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"entries-count"[39m
+        [36m>[39m
+          [0m0[0m
+        [36m</div>[39m
+        [36m<button>[39m
+          [0mAdd Entry[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"fixed bottom-24 right-6 z-50 flex flex-col gap-2 max-w-sm"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should add an entry successfully
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/app/contexts/VaultContext.test.tsx:112:5
+    110|     });
+    111| 
+    112|     it('should add an entry successfully', async () => {
+       |     ^
+    113|         renderWithProviders(<TestComponent />);
+    114| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should mark entry as deleted (tombstone)
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/app/contexts/VaultContext.test.tsx:130:5
+    128|     });
+    129| 
+    130|     it('should mark entry as deleted (tombstone)', async () => {
+       |     ^
+    131|         renderWithProviders(<TestComponent />);
+    132| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should queue changes to outbox when offline
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  1[39m
+Received:
+[31m  0[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"sync-status"[39m
+        [36m>[39m
+          [0mpending[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"vault-version"[39m
+        [36m>[39m
+          [0m0[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"online-status"[39m
+        [36m>[39m
+          [0mOffline[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"entries-count"[39m
+        [36m>[39m
+          [0m0[0m
+        [36m</div>[39m
+        [36m<button>[39m
+          [0mAdd Entry[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"fixed bottom-24 right-6 z-50 flex flex-col gap-2 max-w-sm"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ ❯ src/app/contexts/VaultContext.test.tsx:174:57
+    172| 
+    173|         await waitFor(() => {
+    174|             expect(screen.getByTestId('entries-count')).toHaveTextCont…
+       |                                                         ^
+    175|         });
+    176| 
+ ❯ runWithExpensiveErrorDiagnosticsDisabled node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  15:06:34
+   Duration  12.98s (transform 222ms, setup 349ms, import 688ms, tests 11.04s, environment 601ms)
+

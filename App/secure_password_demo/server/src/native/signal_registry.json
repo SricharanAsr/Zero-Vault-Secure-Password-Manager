@@ -1,0 +1,7 @@
+{
+    "device_trusted": 3,
+    "failed_login_count": 2,
+    "ip_subnet": 4,
+    "user_agent_hash": 5,
+    "secure_boot": 1
+}

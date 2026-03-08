@@ -1,0 +1,93 @@
+name: ZeroVault Full-Stack CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  # ----------------------------------------------------
+  # JOB 1: Risk Engine Core (C++)
+  # ----------------------------------------------------
+  risk-engine-core:
+    name: Build & Test Risk Engine (C++)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up GCC and Make
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
+      - name: Make scripts executable
+        run: chmod +x risk-engine/run_all_unit_tests.sh
+
+      - name: Run Native Unit Tests
+        run: |
+          cd risk-engine
+          ./run_all_unit_tests.sh
+
+  # ----------------------------------------------------
+  # JOB 2: Backend Server & Native Addon (Node.js)
+  # ----------------------------------------------------
+  backend-server:
+    name: Build & Test Backend Server
+    runs-on: ubuntu-latest
+    # Needs risk engine to pass mechanically before integrating
+    needs: risk-engine-core 
+    
+    defaults:
+      run:
+        working-directory: App/secure_password_demo/server
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+          cache-dependency-path: App/secure_password_demo/server/package-lock.json
+
+      - name: Install dependencies (forces node-gyp build)
+        run: npm ci
+
+      - name: Run Backend Tests (Jest)
+        run: npm test
+
+  # ----------------------------------------------------
+  # JOB 3: Frontend Client (React)
+  # ----------------------------------------------------
+  frontend-client:
+    name: Build & Test Frontend Client
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: App/secure_password_demo/client
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+          cache-dependency-path: App/secure_password_demo/client/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint Frontend Code
+        run: npm run lint
+
+      - name: Run Frontend Tests (Vitest)
+        run: npm run test -- --run
+
+      - name: Build Production Vite Bundle
+        run: npm run build

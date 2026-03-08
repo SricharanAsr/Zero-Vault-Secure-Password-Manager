@@ -1,0 +1,61 @@
+name: QA Automation Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-report:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install Root Dependencies
+      run: npm install
+
+    - name: Install Frontend Dependencies
+      working-directory: ./App/secure_password_demo/client
+      run: npm install
+
+    - name: Install Backend Dependencies
+      working-directory: ./App/secure_password_demo/server
+      run: npm install
+
+    - name: Build C11 Risk Engine (Epic 1 & 5)
+      working-directory: ./risk-engine
+      run: make
+
+    - name: Run Backend API & Sync Tests (Epic 3 & 4)
+      working-directory: ./App/secure_password_demo/server
+      run: npx jest --json --outputFile=jest-results.json
+
+    - name: Install Playwright Browsers
+      working-directory: ./App/secure_password_demo/e2e
+      run: npx playwright install --with-deps
+
+    - name: Run Playwright E2E Tests (Epic 2 & 7)
+      working-directory: ./App/secure_password_demo/e2e
+      run: npx playwright test
+      
+    - name: Run k6 Performance Tests (Epic 6)
+      uses: grafana/k6-action@v0.2.0
+      with:
+        filename: App/secure_password_demo/performance/load-test.js
+
+    - name: Upload Test Results to QA Touch
+      if: always() # Run even if tests fail
+      env:
+        QATOUCH_DOMAIN: ${{ secrets.QATOUCH_DOMAIN }}
+        QATOUCH_API_TOKEN: ${{ secrets.QATOUCH_API_TOKEN }}
+        QATOUCH_PROJECT_KEY: ${{ secrets.QATOUCH_PROJECT_KEY }}
+        QATOUCH_TEST_RUN_ID: ${{ secrets.QATOUCH_TEST_RUN_ID }}
+      run: node scripts/qa-touch-reporter.js

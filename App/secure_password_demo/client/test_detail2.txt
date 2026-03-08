@@ -1,0 +1,144 @@
+
+ RUN  v4.0.18 C:/Users/kusha/OneDrive/Desktop/Integrated Product/App/secure_password_demo/client
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should queue changes to outbox when offline
+Auto-triggering syncVault...
+Checking for changes... Vault v1 vs Server v0 on device d06091b1-0ca7-44a9-8061-21469fbc6488
+Entries: [33m1[39m
+Calculated Delta: {
+  added: [33m0[39m,
+  updated: [33m1[39m,
+  deleted: [33m0[39m,
+  baseVersion: [33m0[39m,
+  eventId: [32m'd2b16bce-1474-43f2-9ef1-2e00d41a3023'[39m
+}
+Queueing event to outbox: {
+  eventId: [32m'd2b16bce-1474-43f2-9ef1-2e00d41a3023'[39m,
+  timestamp: [33m1772962939957[39m,
+  delta: {
+    eventId: [32m'd2b16bce-1474-43f2-9ef1-2e00d41a3023'[39m,
+    device_id: [32m'd06091b1-0ca7-44a9-8061-21469fbc6488'[39m,
+    added: [],
+    updated: [ [36m[Object][39m ],
+    deleted: [],
+    baseVersion: [33m0[39m
+  }
+}
+Device registered/updated: Linux PC (Unknown Browser)
+
+stdout | src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should queue changes to outbox when offline
+Init: server has 0 entries (v1), local has 0 entries (v0)
+Both server and local are empty. Fresh vault.
+
+ ↓ src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should add an entry successfully
+ ↓ src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should mark entry as deleted (tombstone)
+ × src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should queue changes to outbox when offline 1055ms
+   → [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  1[39m
+Received:
+[31m  0[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"sync-status"[39m
+        [36m>[39m
+          [0mpending[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"vault-version"[39m
+        [36m>[39m
+          [0m1[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"online-status"[39m
+        [36m>[39m
+          [0mOffline[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"entries-count"[39m
+        [36m>[39m
+          [0m0[0m
+        [36m</div>[39m
+        [36m<button>[39m
+          [0mAdd Entry[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"fixed bottom-24 right-6 z-50 flex flex-col gap-2 max-w-sm"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/app/contexts/VaultContext.test.tsx > VaultContext Integration > should queue changes to outbox when offline
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  1[39m
+Received:
+[31m  0[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"sync-status"[39m
+        [36m>[39m
+          [0mpending[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"vault-version"[39m
+        [36m>[39m
+          [0m1[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"online-status"[39m
+        [36m>[39m
+          [0mOffline[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mdata-testid[39m=[32m"entries-count"[39m
+        [36m>[39m
+          [0m0[0m
+        [36m</div>[39m
+        [36m<button>[39m
+          [0mAdd Entry[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"fixed bottom-24 right-6 z-50 flex flex-col gap-2 max-w-sm"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+ ❯ src/app/contexts/VaultContext.test.tsx:219:57
+    217| 
+    218|         await waitFor(() => {
+    219|             expect(screen.getByTestId('entries-count')).toHaveTextCont…
+       |                                                         ^
+    220|         });
+    221| 
+ ❯ runWithExpensiveErrorDiagnosticsDisabled node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 skipped (3)
+   Start at  15:12:17
+   Duration  3.20s (transform 184ms, setup 283ms, import 621ms, tests 1.06s, environment 478ms)
+
