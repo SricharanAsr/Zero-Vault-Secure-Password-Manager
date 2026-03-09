@@ -7,6 +7,6 @@
         "server"
     ],
     "scripts": {
-        "build": "npm run build --workspace=client && rm -rf public && cp -r client/dist public"
+        "build": "npm run build --workspace=client"
     }
 }
