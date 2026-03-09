@@ -62,7 +62,7 @@ export default function Settings() {
         const fetchDevices = async () => {
             if (!token) return;
             try {
-                const res = await fetch(`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'}/api/devices`, {
+                const res = await fetch(`${import.meta.env.VITE_BACKEND_URL || (import.meta.env.PROD ? '' : 'http://localhost:5000')}/api/devices`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 if (res.ok) {

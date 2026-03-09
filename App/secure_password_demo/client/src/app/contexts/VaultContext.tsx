@@ -23,7 +23,7 @@ interface VaultContextType {
 
 const VaultContext = createContext<VaultContextType | undefined>(undefined);
 
-const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'}/api/vault`;
+const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL || (import.meta.env.PROD ? '' : 'http://localhost:5000')}/api/vault`;
 
 /**
  * Provider component for the Vault Context.
@@ -124,7 +124,7 @@ export const VaultProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
             try {
                 const deviceInfo = getDeviceInfo();
-                await fetch(`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'}/api/devices/register`, {
+                await fetch(`${import.meta.env.VITE_BACKEND_URL || (import.meta.env.PROD ? '' : 'http://localhost:5000')}/api/devices/register`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
