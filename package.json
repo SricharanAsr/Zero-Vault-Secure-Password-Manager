@@ -23,6 +23,7 @@
     "@types/bcryptjs": "^3.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@vercel/ncc": "^0.38.4",
     "typescript": "^5.9.3"
   },
   "keywords": [],
