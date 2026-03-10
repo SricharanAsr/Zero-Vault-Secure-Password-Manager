@@ -25,6 +25,7 @@
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@vercel/ncc": "^0.38.4",
+    "@vitest/coverage-v8": "^4.0.18",
     "typescript": "^5.9.3"
   },
   "keywords": [],
